@@ -14,7 +14,7 @@
 
       "supportsTablet": true
     },
-    "name": "llm-tester",
+    "name": "llm-tester-prototype",
     "orientation": "portrait",
     "plugins": [
 

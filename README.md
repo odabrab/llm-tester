@@ -24,6 +24,10 @@
 
 > A GenAI service testing mobile application based on React Native. 
 
+O controle de versões deste projeto é realizado com o sistema Git, que utiliza uma estratégia distribuída de repositórios. O primeiro repositório público a receber as entregas fica no serviço GitHub, precisamente em [2].
+
+O IDE a implementar o arcabouço React Native usado neste projeto é público, e utiliza o serviço Expo Snack. Enquanto é considerado um protótipo de sala de aula, os códigos-fontes podem ser encontrados em [1].
+
 <!--
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
@@ -219,4 +223,6 @@ Quanto à viabilidade da utiliza&ccedil;ão de planilhas _online_ como bancos de
 -->
 ## REFER&Ecirc;NCIAS 
 
-[1] BARBADO JUNIOR, Marcio et al. LLM Tester. 2024. 650 Industries. Dispon&iacute;vel em: <https://snack.expo.dev/@marcio.barbado/llm-tester>, acessado em 29 de Setembro de 2024. 
+[1] BARBADO JUNIOR, Marcio et al. LLM Tester prototype. 2024. 650 Industries. Dispon&iacute;vel em: <https://snack.expo.dev/@marcio.barbado/llm-tester-prototype>, acessado em 30 de Setembro de 2024. 
+
+[2] BARBADO JUNIOR, Marcio et al. LLM Tester. 2024. GitHub. Dispon&iacute;vel em: <https://github.com/odabrab/llm-tester>, acessado em 30 de Setembro de 2024. 
