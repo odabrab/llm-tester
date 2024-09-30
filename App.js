@@ -116,6 +116,11 @@
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+//  O módulo expo-dev-client deve ser usado apenas fora de produção.
+//
+//  Requer configuração específica em app.json.
+import * as DevClient from 'expo-dev-client';
+
 //  Importar NavigationContainer da biblioteca
 //  @react-navigation/native.
 import { NavigationContainer } from '@react-navigation/native';

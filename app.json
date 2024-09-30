@@ -1,27 +1,42 @@
 {
   "expo": {
-    "name": "llm-checker",
-    "slug": "snack-29683f6e-c88e-467a-8418-02eddeb64944",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "supportsTablet": true
-    },
+
     "android": {
+
       "adaptiveIcon": {
+
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
+    "icon": "./assets/icon.png",
+    "ios": {
+
+      "supportsTablet": true
+    },
+    "name": "llm-tester",
+    "orientation": "portrait",
+    "plugins": [
+
+      [
+        "expo-dev-launcher",
+        {
+          "launchMode": "most-recent"
+        },
+      ]
+    ]
+    "slug": "snack-29683f6e-c88e-467a-8418-02eddeb64944",
+    "splash": {
+
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "userInterfaceStyle": "light",
+    "version": "1.0.0",
     "web": {
+
       "favicon": "./assets/favicon.png"
-    }
+    },
   }
 }
