@@ -1,35 +1,14 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+######################################################################
+########	.gitignore
+########
+########	In order to store the ignored files list outside of
+########	the Git tree, one should use the ".git/info/exclude"
+########	file.
+######################################################################
 
-# dependencies
-node_modules/
+#  Local GUI file(s).
+*.directory
 
-# Expo
-.expo/
-dist/
-web-build/
+/app.json
 
-# Native
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
-.DS_Store
-*.pem
-
-# local env files
-.env*.local
-
-# typescript
-*.tsbuildinfo
+/eas.json
