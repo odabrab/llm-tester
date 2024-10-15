@@ -79,6 +79,8 @@
 ////////  O módulo fs permite trabalhar com o sistema de arquivos
 ////////  local sob o ponto de vista da aplicação.
 ////////
+////////  O módulo expo-document-picker
+////////
 ////////  O módulo @google/generative-ai pressupõe a utilização de um
 ////////  ambiente Node.js.
 //////////////////////////////////////////////////////////////////////
@@ -86,6 +88,8 @@
 //////////////////////////////////////////////////////////////////////
 
 import 'fs';
+
+import * as DocumentPicker from 'expo-document-picker';
 
 import { useState } from 'react';
 
@@ -241,6 +245,19 @@ const handleSend = async () => {
 async function run(var_par_str_prompt) {
 
 //////////////////////////////////////////////////////////////////////
+////////  (CC) CONSTANT CON_PICKEDDOCUMENT
+////////
+////////  Declarar e inicializar a constante con_pickedDocument com um
+////////  documento a conter a chave da API.
+//////////////////////////////////////////////////////////////////////
+  const con_pickedDocument = await DocumentPicker.pickSingle(
+
+                               {
+                                 type: [DocumentPicker.types.allFiles],
+                               }
+                             );
+
+//////////////////////////////////////////////////////////////////////
 ////////  (CC) CONSTANT MODEL
 ////////
 ////////  Declarar e inicializar a constante model com uma versão de
@@ -258,7 +275,12 @@ async function run(var_par_str_prompt) {
 ////////  * gemini-pro-vision
 ////////    .
 //////////////////////////////////////////////////////////////////////
-  const model        = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+  const model              = genAI.getGenerativeModel(
+
+                               {
+                                 model: 'gemini-1.5-flash',
+                               }
+                             );
 
   const prompt       = var_par_str_prompt;
 

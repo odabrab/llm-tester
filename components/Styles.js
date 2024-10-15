@@ -120,7 +120,6 @@ export default StyleSheet.create({
   },
 
   containerRow: {
-    alignItems:        "center",
     flexDirection:     "row",
   },
 
