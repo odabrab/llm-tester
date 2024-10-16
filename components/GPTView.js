@@ -134,7 +134,7 @@ function GPTView({ navigation }) {
     
     <View>
       <Text>
-      {item.text}
+        {item.text}
       </Text>
     </View>
   }; //  Fim da inicialização da constante con_renderizacao.
