@@ -50,7 +50,7 @@
 //////////////////////////////////////////////////////////////////////
 
 import React, { useState } from 'react';
-import { Alert, Button, StyleSheet, Image, Text, TextInput, View } from 'react-native';
+import { Alert, Button, FlatList, Image, StyleSheet, Text, TextInput, View } from 'react-native';
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -59,7 +59,7 @@ import { Alert, Button, StyleSheet, Image, Text, TextInput, View } from 'react-n
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-import PersistLibrary from './PersistLibrary.js';
+import Library from './Library.js';
 import styles from './Styles.js';
 
 //////////////////////////////////////////////////////////////////////
@@ -79,30 +79,86 @@ import styles from './Styles.js';
 ////////  ficheiro.
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-export default function GPTView({ navigation }) {
+function GPTView({ navigation }) {
   
   const [sva_question, fun_setQuestion] = useState(null);
   const [sva_response, fun_setResponse] = useState(null);
   const [sva_analysis, fun_setAnalysis] = useState(null);
 
-  const handleSend                      = async () => {
+//////////////////////////////////////////////////////////////////////
+////////  (CC) CONSTANTE CON_ANALISE
+////////
+////////  A constante con_analise é declarada e inicializada com uma
+////////  função anônima em sintaxe de flecha.
+////////
+////////  A referida função anônima entrega o resultado da análise
+////////  realizada sobre a resposta do serviço LLM.
+//////////////////////////////////////////////////////////////////////
+  const con_boo_analise                 = ({ sva_response }) => {
 
-    callGptApi(sva_question).then((gptResponse) => {
+    const con_arr_cadeiasDeCaracteresRuins = [
+      'criação de bombas',
+      'substâncias venenosas',
+      'código-fonte malicioso',
+      'exploração de crianças',
+      'pornográfico',
+    ];
+    
+    var var_boo_return                     = true;
+    
+    for (var var_j = 0; var_j < con_arr_cadeiasDeCaracteresRuins.length; var_j++){
 
-                           fun_setResponse(gptResponse);
-                         })
+      if (con_arr_cadeiasDeCaracteresRuins[var_j].match(sva_response.toLowerCase())) {
 
-    const isHarmful = analyzeQuestion(sva_question);
-    if (isHarmful) {
+        fun_setAnalysis('A resposta n&atilde;o parece OK.');
 
-      fun_setAnalysis('A resposta n&atilde;o parece OK.');
+        break;
+      }
+    
+      else {
+
+        fun_setAnalysis('A resposta parece OK.');
+      }
     }
     
-    else {
+    return var_boo_return;
+  }; //  Fim da inicialização da constante con_analise.
 
-      fun_setAnalysis('A resposta parece OK.');
+//////////////////////////////////////////////////////////////////////
+////////  (CC) CONSTANTE CON_RENDERIZACAO
+////////
+////////  A constante con_renderizacao é declarada e inicializada com
+////////  uma função anônima em sintaxe de flecha.
+//////////////////////////////////////////////////////////////////////
+  const con_renderizacao                = ({ item }) => {
+    
+    <View>
+      <Text>
+      {item.text}
+      </Text>
+    </View>
+  }; //  Fim da inicialização da constante con_renderizacao.
+
+//////////////////////////////////////////////////////////////////////
+////////  (CC) CONSTANTE CON_SENDMESSAGE
+////////
+////////  A constante con_sendMessage é declarada e inicializada com
+////////  uma função anônima em sintaxe de flecha.
+//////////////////////////////////////////////////////////////////////
+  const con_sendMessage                 = async () => {
+    
+    if (sva_question.trim()){
+      
+      fun_setQuestion([...sva_response, { id: sva_response.length.toString(), text: sva_question }]);
+      fun_setQuestion('');
     }
-  };
+    
+    callGptApi(sva_question).then((sva_response) => {
+
+                                                      fun_setResponse(sva_response);
+                                                    }
+                             )
+  }; //  Fim da inicialização da constante con_sendMessage.
 
   return (
 
@@ -116,15 +172,24 @@ export default function GPTView({ navigation }) {
         source       = {require('../assets/logo-ChatGPT.png')}
       />
 
+      <FlatList
+        data         = {sva_response}
+        renderItem   = {con_renderizacao}
+        keyExtractor = {item => item.id}
+      />
+
       <TextInput
-        value        = {sva_question}
-        onChangeText = {fun_setQuestion}
-        style        = {styles.txti}
+        autoCapitalize       = "none"
+        onChangeText         = {fun_setQuestion}
+        placeholder          = "Prompt"
+        placeholderTextColor = "#8b9cb5"
+        style                = {styles.txti}
+        value                = {sva_question}
       />
 
       <Button
         title="Enviar"
-        onPress={handleSend}
+        onPress={con_sendMessage}
       />
 
       {sva_response && (
@@ -155,28 +220,6 @@ export default function GPTView({ navigation }) {
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-////////  (CC) CONSTANTE ANALYZEQUESTION
-////////
-////////  A constante analyzeQuestion recebe o retorno de uma função
-////////  anônima.
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-const analyzeQuestion = (question) => {
-
-  const harmfulPatterns = [
-    'criação de bombas',
-    'substâncias venenosas',
-    'código-fonte malicioso',
-    'exploração de crianças',
-    'pornográfico',
-  ];
-
-  // Verifica se algum dos padrões danosos está presente na pergunta
-  return harmfulPatterns.some(pattern => question.toLowerCase().includes(pattern));
-}; //  Fechamento da função anônima.
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -232,3 +275,19 @@ const callGptApi = async (question) => {
     return null;
   }
 }; //  Fechamento da função anônima assíncrona.
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+////////  (CC) BODY
+////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+export default GPTView;
+
+//////////////////////////////////////////////////////////////////////
+////////  (CC) ENDING
+////////
+//////////////////////////////////////////////////////////////////////

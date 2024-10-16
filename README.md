@@ -157,6 +157,8 @@ Adicionalmente, o Expo oferece um [f&oacute;rum](https://forums.expo.dev/c/expo-
 -->
 ## 3) REQUISITOS E PRINCIPAIS COMPONENTES
 
+O protótipo para o arcabouço React Native se encontra adaptado às restrições do IDE web chamado Expo Snack.
+
 A biblioteca react-native-fs figura como uma op&ccedil;ão para a cria&ccedil;ão de ficheiros, entretanto se mostrou problemática no IDE Snack.
 
 ### 3.1) CACHING E PERSIST&Ecirc;NCIA

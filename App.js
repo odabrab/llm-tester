@@ -150,7 +150,7 @@ import GPTView from './components/GPTView.js';
 import InitialView from './components/InitialView.js';
 import LlamaView from './components/LlamaView.js';
 import LLMView from './components/LLMView.js';
-import PersistLibrary from './components/PersistLibrary.js';
+import Library from './components/Library.js';
 import RegisterView from './components/RegisterView.js';
 
 //////////////////////////////////////////////////////////////////////
