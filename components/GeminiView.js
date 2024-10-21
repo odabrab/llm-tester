@@ -53,7 +53,7 @@
 ////////
 ////////  (CO) UTILIZAÇÃO
 ////////    (CC) BIBLIOTECA(S)
-////////      (CC) BIBLIOTECA(S) LOCAL(IS)
+////////    (CC) BIBLIOTECA(S) LOCAL(IS)
 ////////    (CO) FUNÇÃO(ÕES)
 ////////      (CC) FUNÇÃO FILETOGENERATIVEPART()
 ////////      (CC) FUNÇÃO GEMINIVIEW()
@@ -62,11 +62,12 @@
 ////////      (CC) FUNÇÃO RUN()
 ////////        (CC) CONSTANT MODEL
 ////////    (CO) DECLARAÇÃO(ÕES) E INICIALIZAÇÃO(ÕES)
-////////        (CC) CONSTANT FS
-////////        (CC) CONSTANT GOOGLEGENERATIVEAI
-////////        (CO) DECLARAÇÃO(ÕES) E INICIALIZAÇÃO(ÕES) RESTRITA(S)
-////////          (CC) CONSTANT GENAI
+////////      (CC) CONSTANT FS
+////////      (CC) CONSTANT GOOGLEGENERATIVEAI
+////////      (CO) DECLARAÇÃO(ÕES) E INICIALIZAÇÃO(ÕES) RESTRITA(S)
+////////        (CC) CONSTANT GENAI
 ////////    (CC) BODY
+////////      (CC) ENDING
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -96,7 +97,9 @@
 ////////  local sob o ponto de vista da aplicação.
 ////////
 ////////  O módulo @google/generative-ai pressupõe a utilização de um
-////////  ambiente Node.js.
+////////  ambiente Node.js. GoogleGenerativeAI é uma estrutura de
+////////  dados, que corresponde a uma classe com o modelo generativo
+////////  do Google.
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -115,13 +118,14 @@ import {
   View,
 } from 'react-native';
 
-//  GoogleGenerativeAI.
-import '@google/generative-ai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
+//////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) BIBLIOTECA(S) LOCAL(IS)
 ////////
+//////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
@@ -164,7 +168,7 @@ function fileToGenerativePart(path, mimeType) {
 function GeminiView({ navigation }) {
 
   const [sva_prompt, fun_setPrompt]     = useState('');
-  const [sva_response, fun_setResponse] = useState([]);
+  const [sva_response, fun_setResponse] = useState(null);
   const [sva_analysis, fun_setAnalysis] = useState(null);
 
   return (
@@ -190,10 +194,10 @@ function GeminiView({ navigation }) {
 
       <Button
         title                = "Enviar"
-        onPress              = {fun_boo_sendPrompt()}
+        onPress              = {fun_boo_sendPrompt(sva_prompt)}
       />
 
-      {sva_response && (
+      {fun_setResponse(gva_str_response) && (
         <View>
           <Text>
             RESPOSTA
@@ -204,7 +208,7 @@ function GeminiView({ navigation }) {
         </View>
       )}
 
-      {sva_analysis && (
+      {fun_setAnalysis(sva_response) && (
         <View>
           <Text>
             AN&Aacute;LISE
@@ -230,7 +234,7 @@ function GeminiView({ navigation }) {
       </View>
     </View>
   );
-}
+} //  Fim da função GeminiView().
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -244,22 +248,26 @@ async function fun_boo_receive(){
   var var_boo_return = true;
 
   return var_boo_return;
-};
+}
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) FUNÇÃO FUN_BOO_SENDPROMPT()
 ////////
-////////  Sintaxe arrow.
+////////  .
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-async function fun_boo_sendPrompt(){
+async function fun_boo_sendPrompt(var_par_sendPrompt){
 
-  const llmAnswer = await run(sva_prompt);
+  var var_sendPrompt     = var_par_sendPrompt;
 
-  setAnswer(llmAnswer);
+  const llmAnswer        = await run(var_sendPrompt);
+  
+  var var_boo_sendReturn = true;
+  
+  gva_str_response       = llmAnswer;
 
-  sva_boo_conclusaoSet(fun_boo_test(sva_prompt));
+  return var_boo_sendReturn;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -288,28 +296,30 @@ async function run(var_par_str_prompt){
 ////////  * gemini-pro-vision
 ////////    .
 //////////////////////////////////////////////////////////////////////
-  const model              = genAI.getGenerativeModel(
+  const model          = genAI.getGenerativeModel(
 
                                {
                                  model: 'gemini-1.5-flash',
                                }
                              );
 
-  const prompt       = var_par_str_prompt;
+  const con_str_prompt = var_par_str_prompt;
 
-  try{
+//////////////////////////////////////////////////////////////////////
+////////  (CC) CONSTANT CON_OBJ_PROMISERESULT
+////////
+////////  A constante con_obj_promiseResult é um objeto da classe
+////////  Promise.
+//////////////////////////////////////////////////////////////////////
+const con_obj_promiseResult  = await model.generateContent(con_str_prompt)
+  .then(
 
-    const result     = await model.generateContent(prompt);
-  }
+  )
+  .catch(
 
-  catch(var_str_excecao){
+  );
 
-    console.error(var_str_excecao);
-
-    const result     = await model.streamGenerateContent(prompt);
-  }
-
-  const response     = await result.response;
+  const response     = await con_obj_promiseResult.response;
   const con_str_text = response.text();
 
   return con_str_text;
@@ -334,19 +344,21 @@ const fs                     = require('fs');
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-////////  (CC) CONSTANT GOOGLEGENERATIVEAI
+////////  (CC) CONSTANT CON_STR_GEMINIAPI
 ////////
-////////  Declarar e inicializar a constante GoogleGenerativeAI com o
-////////  módulo @google/generative-ai.
-////////
-////////  A constante GoogleGenerativeAI armazena uma estrutura de
-////////  dados.
-////////
-////////  A referida estrutura de dados corresponde a uma classe com o
-////////  modelo generativo do Google.
+////////  .
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+const con_str_geminiAPI='AsuaAPIkeyNAOdeveSERdeixadaAQUI';
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+////////  (CC) VARIÁVEL GVA_STR_RESPONSE
+////////
+////////  Global variable.
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+var gva_str_response         = '';
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -367,7 +379,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 ////////  A referida estrutura de dados corresponde a um objeto da
 ////////  classe GoogleGenerativeAI.
 //////////////////////////////////////////////////////////////////////
-const genAI                  = new GoogleGenerativeAI(process.env.EXPO_PUBLIC_API_KEY_GEMINI_0001);
+const genAI                  = new GoogleGenerativeAI(con_str_geminiAPI);
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
