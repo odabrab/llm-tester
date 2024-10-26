@@ -51,7 +51,7 @@
 import React from 'react';
 
 //  SafeAreaView é uma opção a View. Ambas estão em react-native.
-import { Button, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, Button, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { WebView } from 'react-native-webview';
 
@@ -91,13 +91,13 @@ import styles from './Styles.js';
 ////////
 ////////  Card é um exemplo de controle.
 //////////////////////////////////////////////////////////////////////
-export default function InitialView({ navigation }) {
+function InitialView({ navigation }) {
 
   const onChangeText = React.useState("");
 
   return (
 
-    <View>
+    <View style = {styles.containerViewOutter}>
 
       <View style = {styles.containerRow}>
 
@@ -113,7 +113,7 @@ export default function InitialView({ navigation }) {
       </View>
 
       <Text style={styles.paragraph}>
-        LLM Tester
+        Prot&oacute;tipo: LLM Tester
       </Text>
 
       <View style = {styles.btnLLM}>
@@ -143,7 +143,6 @@ export default function InitialView({ navigation }) {
       <View style = {styles.containerRowFooterInitialView}>
         <TouchableOpacity
           onPress = {() => navigation.navigate("RegisterView")}
-          style   = {styles.btnTouchableLeft}
         >
           <Text style   = {styles.btnLabelAccount}>
             CRIAR CONTA
@@ -153,3 +152,22 @@ export default function InitialView({ navigation }) {
     </View>
   );
 }
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+////////  (CC) BODY
+////////
+////////  .
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+export default InitialView;
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+////////  (CC) FIM
+////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////

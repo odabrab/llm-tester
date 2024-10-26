@@ -125,7 +125,7 @@ import { Cache } from 'react-native-cache';
 ////////  (CO) FUNCTION(S)
 ////////
 ////////  Funções de persistência oferecidas pela biblioteca
-////////  LibraryPersist.js.
+////////  Library.js.
 ////////
 ////////  A linguagem de programação JavaScript oferece algumas
 ////////  opções para se trabalhar com arquivos, ficheiros e

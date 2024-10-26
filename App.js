@@ -144,6 +144,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //////////////////////////////////////////////////////////////////////
 
 import AccountView from './components/AccountView.js';
+import AnaliseView from './components/AnaliseView.js';
 import AuthenticationView from './components/AuthenticationView.js';
 import GeminiView from './components/GeminiView.js';
 import GPTView from './components/GPTView.js';
@@ -152,6 +153,7 @@ import LlamaView from './components/LlamaView.js';
 import LLMView from './components/LLMView.js';
 import Library from './components/Library.js';
 import RegisterView from './components/RegisterView.js';
+import GeminiResponseView from './components/GeminiResponseView.js';
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -196,13 +198,22 @@ function funExample(varParBooA, varParNumB) {
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) FUNCTION APP()
 ////////
-////////  A função App() é a rotina principal da aplicação.
+////////  A função App() é a rotina principal da aplicação. É aquela
+////////  que o React Native implementado no IDE Snack irá executar em
+////////  primeiro lugar.
 ////////
-////////  Aqui estruturamos a pilha de telas.
+////////  Aqui também é a função na qual se organiza todo o esquema de
+////////  navegação, o que é feito dentro de NavigationContainer.
+////////
+////////  O interior da tag JSX referente ao componente
+////////  é justamente o ponto em que se deve estruturar a pilha de
+////////  telas que devem ser navegáveis.
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function App() {
+
   return (
+
     <NavigationContainer>
       <Stack.Navigator
         headerMode={'screen'}
@@ -231,6 +242,14 @@ function App() {
           name="AccountView"
           options={{
             title: 'Account View',
+          }}
+        />
+
+        <Stack.Screen
+          component={AnaliseView}
+          name="AnaliseView"
+          options={{
+            title: 'Analise View',
           }}
         />
 
@@ -273,6 +292,14 @@ function App() {
             title: 'Register View',
           }}
         />
+
+        <Stack.Screen
+          component={GeminiResponseView}
+          name="GeminiResponseView"
+          options={{
+            title: 'Gemini Response View',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -307,11 +334,11 @@ const Stack = createNativeStackNavigator();
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-export default App();
+export default App;
 
 //////////////////////////////////////////////////////////////////////
-////////  (CC) ENDING
+////////  (CC) FIM
 ////////
 //////////////////////////////////////////////////////////////////////
 
-// throw "Forcing artificial end.";
+// throw "For&ccedi;ar o encerramento da aplica&ccedi;ão.";

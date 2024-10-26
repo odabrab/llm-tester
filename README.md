@@ -59,27 +59,37 @@ O IDE a implementar o arcabouço React Native usado neste projeto é público, e
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**1.2.3.1) DEPEND&Ecirc;NCIAS**
 
-&nbsp;&nbsp;**3.1) CACHING E PERSIST&Ecirc;NCIA**
+**2) ESTRUTURA DO PROJETO LLM TESTER**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**3.1.1) LOCALMENTE**
+&nbsp;&nbsp;**2.1) O DIRET&Oacute;RIO /ASSETS/**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**3.1.2) REMOTAMENTE**
+&nbsp;&nbsp;**2.2) O DIRET&Oacute;RIO /COMPONENTS/**
 
-**4) ESTRUTURA DO PROJETO LLM TESTER**
+&nbsp;&nbsp;&nbsp;&nbsp;**2.2.1) O FICHEIRO /COMPONENTS/STYLES.JS**
 
-&nbsp;&nbsp;**4.1) O DIRET&Oacute;RIO /ASSETS/**
+&nbsp;&nbsp;**2.3) O DIRET&Oacute;RIO /.PERSISTENCE/**
 
-&nbsp;&nbsp;**4.2) O DIRET&Oacute;RIO /COMPONENTS/**
+&nbsp;&nbsp;&nbsp;&nbsp;**2.3.1) O FICHEIRO /.PERSISTENCE/LOG.CSV**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**4.2.1) O FICHEIRO /COMPONENTS/STYLES.JS**
+**3) ARQUITETURA**
 
-&nbsp;&nbsp;**4.3) O DIRET&Oacute;RIO /.PERSISTENCE/**
+&nbsp;&nbsp;**3.1) PRINCIPAIS COMPONENTES**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**4.3.1) O FICHEIRO /.PERSISTENCE/LOG.CSV**
+&nbsp;&nbsp;**3.2) CACHING E PERSIST&Ecirc;NCIA**
 
-**5) PRINCIPAIS COMPONENTES**
+&nbsp;&nbsp;&nbsp;&nbsp;**3.2.1) LOCALMENTE**
 
-**6) OBSERVA&Ccedil;&Otilde;ES**
+&nbsp;&nbsp;&nbsp;&nbsp;**3.2.2) REMOTAMENTE**
+
+**4) LLM**
+
+&nbsp;&nbsp;**4.1) GEMINI**
+
+&nbsp;&nbsp;**4.2) GPT**
+
+&nbsp;&nbsp;**4.3) LLAMA**
+
+**5) OBSERVA&Ccedil;&Otilde;ES**
 
 **REFER&Ecirc;NCIAS**
 
@@ -87,8 +97,10 @@ O IDE a implementar o arcabouço React Native usado neste projeto é público, e
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
+----------------------------------------------------------------------
 --------  INTRODU&ccedil;&Atilde;O
 --------
+----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
@@ -168,78 +180,140 @@ Adicionalmente, o Expo oferece um [f&oacute;rum](https://forums.expo.dev/c/expo-
 
 
 
-### 3.1) CACHING E PERSIST&Ecirc;NCIA
 
-Dados da aplica&ccedil;&atilde;o s&atilde;o salvos localmente e remotamente. Eles s&atilde;o organizados em três tipos de tabelas: um tipo para tabelas de contas, um tipo para tabelas de consultas, e um tipo para tabelas de registros ou *logs*.
-
-Tabelas de registros ou *logs* servem para auxíliar a pr&oacute;pria atividade do desenvolvimento da aplica&ccedil;&atilde;o.
-
-#### 3.1.1) LOCALMENTE
-
-O armazenamento local de dados depende da plataforma.
-
-Caso a plataforma seja Android ou iOS, o armazenamento local pode utilizar os componentes AsyncStorage e Cache, que amenizam problemas do usuário nas situa&ccedil;ões em que as consultas a bancos de dados remotos forem imposs&iacute;veis. Isso significa que o Cache melhora a experiência do usuário. O referido componente copia para o sistema operacional local alguns dados que normalmente exigiriam consultas a servi&ccedil;os remotos.
-
-#### 3.1.2) REMOTAMENTE
-
-Dada a urgência de uso, a implementa&ccedil;&atilde;o padr&atilde;o irá provisoriamente utilizar planilhas _online_ como bancos de dados.
 
 <!--
 ----------------------------------------------------------------------
---------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+--------  ESTRUTURA DO PROJETO LLM TESTER
 --------
 ----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
 -->
-## 4) ESTRUTURA DO PROJETO LLM TESTER
+## 2) ESTRUTURA DO PROJETO LLM TESTER
 
 Diret&oacute;rios e ficheiros com c&oacute;digos-fontes. O ficheiro principal é o App.js.
 
-### 4.1) O DIRET&Oacute;RIO /ASSETS/
+### 2.1) O DIRET&Oacute;RIO /ASSETS/
 
 Abriga conteúdo visual e audiovisual.
 
-### 4.2) O DIRET&Oacute;RIO /COMPONENTS/
+### 2.2) O DIRET&Oacute;RIO /COMPONENTS/
 
 Abriga os ficheiros locais de biblioteca, chamados de componentes.
 
-### 4.2.1) O FICHEIRO /COMPONENTS/STYLES.JS
+### 2.2.1) O FICHEIRO /COMPONENTS/STYLES.JS
 
 Os estilos ficam concentrados no ficheiro /components/Styles.js.
 
-### 4.3) O DIRET&Oacute;RIO /.PERSISTENCE/
+### 2.3) O DIRET&Oacute;RIO /.PERSISTENCE/
 
 Abriga dados, e.g., etc.
 
-### 4.3.1) O FICHEIRO /.PERSISTENCE/LOG.CSV
+### 2.3.1) O FICHEIRO /.PERSISTENCE/LOG.CSV
 
 Persiste registros.
 
-## 5) PRINCIPAIS COMPONENTES
+<!--
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+--------  ARQUITETURA
+--------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+-->
+## 3) ARQUITETURA
+
+### 3.1) PRINCIPAIS COMPONENTES
 
 O prot&oacute;tipo para o arcabouço React Native se encontra adaptado às restrições do IDE web chamado Expo Snack.
 
 A biblioteca react-native-fs figura como uma op&ccedil;&atilde;o para a cria&ccedil;&atilde;o de ficheiros, entretanto se mostrou problemática no IDE Snack.
 
+### 3.2) CACHING E PERSIST&Ecirc;NCIA
+
+Dados da aplica&ccedil;&atilde;o s&atilde;o salvos localmente e remotamente. Eles s&atilde;o organizados em três tipos de tabelas: um tipo para tabelas de contas, um tipo para tabelas de consultas, e um tipo para tabelas de registros ou *logs*.
+
+Tabelas de registros ou *logs* servem para auxíliar a pr&oacute;pria atividade do desenvolvimento da aplica&ccedil;&atilde;o.
+
+#### 3.2.1) LOCALMENTE
+
+O armazenamento local de dados depende da plataforma.
+
+Caso a plataforma seja Android ou iOS, o armazenamento local pode utilizar os componentes AsyncStorage e Cache, que amenizam problemas do usuário nas situa&ccedil;ões em que as consultas a bancos de dados remotos forem imposs&iacute;veis. Isso significa que o Cache melhora a experiência do usuário. O referido componente copia para o sistema operacional local alguns dados que normalmente exigiriam consultas a servi&ccedil;os remotos.
+
+#### 3.2.2) REMOTAMENTE
+
+Dada a urgência de uso, a implementa&ccedil;&atilde;o padr&atilde;o pode provisoriamente utilizar planilhas _online_ como bancos de dados. Os estudantes entretanto têm demonstrado alguma preferência pelo serviço Firebase [6].
+
 <!--
 ----------------------------------------------------------------------
---------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+--------  LLM
 --------
 ----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
 -->
-## 6) OBSERVA&Ccedil;&Otilde;ES
+## 4) LLM
+
+### 4.1) GEMINI
+
+Uma vez autenticada a conta Google, deve-se verificar [3] e [4]. Cotas de utilização podem ser configuradas em [5].
+
+### 4.2) GPT
+
+### 4.3) LLAMA
+
+<!--
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+--------  OBSERVA&Ccedil;&Otilde;ES
+--------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+-->
+## 5) OBSERVA&Ccedil;&Otilde;ES
 
 Quanto à viabilidade da utiliza&ccedil;&atilde;o de planilhas _online_ como bancos de dados para situa&ccedil;ões urgentes.
 
 <!--
 ----------------------------------------------------------------------
---------  REFERÊNCIAS
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+--------  REFER&Ecirc;NCIAS 
 --------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
 ----------------------------------------------------------------------
 -->
 ## REFER&Ecirc;NCIAS 
 
-[1] BARBADO JUNIOR, Marcio et al. LLM Tester prototype. 2024. 650 Industries. Dispon&iacute;vel em: <https://snack.expo.dev/@marcio.barbado/llm-tester-prototype>, acessado em 30 de Setembro de 2024. 
+[1] BARBADO JUNIOR, Marcio et al. LLM Tester prototype. 2024. 650 Industries. Dispon&iacute;vel em: <https://snack.expo.dev/@marcio.barbado/llm-tester-poc>, acessado em 30 de Setembro de 2024. 
 
 [2] BARBADO JUNIOR, Marcio et al. LLM Tester. 2024. GitHub. Dispon&iacute;vel em: <https://github.com/odabrab/llm-tester>, acessado em 30 de Setembro de 2024. 
 
 [3] Google. Google AI Studio. 2024. Dispon&iacute;vel em: <https://makersuite.google.com/>, acessado em 20 de Outubro de 2024.
+
+[4] Google. Get API key. 2024. Dispon&iacute;vel em: <https://aistudio.google.com/apikey>, acessado em 23 de Outubro de 2024.
+
+[5] Google. Quotas & system limits. 2024. Dispon&iacute;vel em: <https://console.cloud.google.com/iam-admin/quotas>, acessado em 24 de Outubro de 2024.
+
+[6] Google. Firebase. 2024. Dispon&iacute;vel em: <https://firebase.google.com/>, acessado em 24 de Outubro de 2024.

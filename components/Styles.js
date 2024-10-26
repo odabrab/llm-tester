@@ -65,12 +65,13 @@ export default StyleSheet.create({
   },
 
   btnLLM: {
-    alignItems:        "center",
     alignSelf:         "center",
-    borderRadius:      50,
-    margin:            50,
-    padding:           25,
-    width:             "30%",
+    flex:              1,
+    flexDirection:     "column",
+    fontSize:          16,
+    gap:               10,
+    padding:           20,
+    width:             "60%",
   },
 
   btnTouchable00: {
@@ -120,6 +121,7 @@ export default StyleSheet.create({
   },
 
   containerRow: {
+    alignItems:        "center",
     flexDirection:     "row",
   },
 
@@ -131,9 +133,12 @@ export default StyleSheet.create({
   },
 
   containerRowFooterInitialView: {
-    alignItems:        "center",
+    alignItems:        "left",
+    alignSelf:         "left",
+    borderRadius:      40,
     flexDirection:     "row",
     justifyContent:    "space-between",
+    margin:            20,
     width:             "100%",
   },
 
@@ -184,13 +189,6 @@ export default StyleSheet.create({
   paragraph01: {
     fontSize:          14,
     fontWeight:        "bold",
-    textAlign:         "center",
-  },
-
-  paragraphJobsView: {
-    fontSize:          14,
-    fontWeight:        "bold",
-    margin:            5,
     textAlign:         "center",
   },
 
