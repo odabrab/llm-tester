@@ -53,8 +53,6 @@ import React from 'react';
 //  SafeAreaView é uma opção a View. Ambas estão em react-native.
 import { Alert, Button, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-import { WebView } from 'react-native-webview';
-
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) BIBLIOTECA(S) LOCAL(IS)
@@ -94,6 +92,8 @@ import styles from './Styles.js';
 function InitialView({ navigation }) {
 
   const onChangeText = React.useState("");
+
+  console.log("API key: " + process.env.Gemini_API_key);
 
   return (
 

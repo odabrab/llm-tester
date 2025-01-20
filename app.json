@@ -1,42 +1,29 @@
 {
   "expo": {
-
+    "name": "llm-tester-poc",
+    "slug": "snack-c0cb9cfa-0c6a-42a2-acbb-40bb4b3a7c41",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
     "android": {
-
       "adaptiveIcon": {
-
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
-    "icon": "./assets/icon.png",
-    "ios": {
-
-      "supportsTablet": true
-    },
-    "name": "llm-tester-prototype",
-    "orientation": "portrait",
-    "plugins": [
-
-      [
-        "expo-dev-launcher",
-        {
-          "launchMode": "most-recent"
-        },
-      ]
-    ]
-    "slug": "snack-29683f6e-c88e-467a-8418-02eddeb64944",
-    "splash": {
-
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "userInterfaceStyle": "light",
-    "version": "1.0.0",
     "web": {
-
       "favicon": "./assets/favicon.png"
     },
+    "description": "A prototype to test whether LLM outputs comply with Brazilian laws. "
   }
 }

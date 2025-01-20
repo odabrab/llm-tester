@@ -71,6 +71,10 @@ O IDE a implementar o arcabouço React Native usado neste projeto é público, e
 
 &nbsp;&nbsp;&nbsp;&nbsp;**2.3.1) O FICHEIRO /.PERSISTENCE/LOG.CSV**
 
+&nbsp;&nbsp;**2.4) O FICHEIRO APP.JS**
+
+&nbsp;&nbsp;**2.5) O FICHEIRO PACKAGE.JSON**
+
 **3) ARQUITETURA**
 
 &nbsp;&nbsp;**3.1) PRINCIPAIS COMPONENTES**
@@ -107,7 +111,7 @@ O IDE a implementar o arcabouço React Native usado neste projeto é público, e
 -->
 ## 1) INTRODU&Ccedil;&Atilde;O
 
-Vislumbres do primeiro quarto do século XXI revelam claras tend&ecirc;ncias tecnol&oacute;gicas, e novas preocupações acompanham as referidas tend&ecirc;ncias. O LLM Tester é uma aplicaç&atilde;o para computadores m&oacute;veis e portáteis capaz de testar serviços de inteligência artificial gerativa ou generativa, i.e., serviços LLM.
+Vislumbres do primeiro quarto do século XXI revelam claras tend&ecirc;ncias tecnol&oacute;gicas, e novas preocupações acompanham as referidas tend&ecirc;ncias. A versão do O LLM Tester aqui presente constitui uma prova de conceito (PoC) referente à capacidade de aplicaç&otilde;es para computadores m&oacute;veis e portáteis testarem serviços de inteligência artificial gerativa ou generativa, i.e., serviços LLM.
 
 <!--
 ----------------------------------------------------------------------
@@ -175,13 +179,6 @@ Caso você já tenha um editor de texto ou IDE de sua preferência, fa&ccedil;a 
 
 Adicionalmente, o Expo oferece um [f&oacute;rum](https://forums.expo.dev/c/expo-dev-tools/61) para dúvidas gerais e específicas. 
 
-
-
-
-
-
-
-
 <!--
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
@@ -196,7 +193,7 @@ Adicionalmente, o Expo oferece um [f&oacute;rum](https://forums.expo.dev/c/expo-
 -->
 ## 2) ESTRUTURA DO PROJETO LLM TESTER
 
-Diret&oacute;rios e ficheiros com c&oacute;digos-fontes. O ficheiro principal é o App.js.
+Diret&oacute;rios e ficheiros com c&oacute;digos-fontes. O ficheiro principal é o App.js. Caso o projeto esteja no Snack, o ficheiro package.json possui particular import&acirc;ncia.
 
 ### 2.1) O DIRET&Oacute;RIO /ASSETS/
 
@@ -217,6 +214,11 @@ Abriga dados, e.g., etc.
 ### 2.3.1) O FICHEIRO /.PERSISTENCE/LOG.CSV
 
 Persiste registros.
+
+### 2.4) O FICHEIRO APP.JS
+
+### 2.5) O FICHEIRO PACKAGE.JSON
+Ficheiro de fundamental importância no IDE Snack. Realiza o gerenciamento de bibliotecas e suas versões.
 
 <!--
 ----------------------------------------------------------------------

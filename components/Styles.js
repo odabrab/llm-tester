@@ -174,6 +174,10 @@ export default StyleSheet.create({
     margin:            28,
   },
 
+  imageLogoGemini: {
+    width:             "100%",
+  },
+
   logoEstacio: {
     height:            64,
     width:             64,
