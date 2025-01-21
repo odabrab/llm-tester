@@ -8,9 +8,9 @@
 ----
 ----  File name:     README.md.
 ----  Author:        Marcio Barbado, Jr.
-----  Contact:       <marcio.bajunior@professores.estacio.br>.
+----  Contact:       <marcio.barbado@bdslabs.com.br>.
 ----  Place:         S&atilde;o Paulo, Brasil.
-----  Copyright (c): 2024.
+----  Copyright (c): 2024, and 2025.
 ----  License:       [LICENSE_NAME].
 ----
 ----  [LICENSE_SHORT_TEXT].
@@ -20,13 +20,19 @@
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 -->
-# README para o c&oacute;digo de LLM Tester
+# README for the LLM Tester source code
 
 > A GenAI service testing mobile application based on React Native. 
 
-O controle de versões deste projeto é realizado com o sistema Git, que utiliza uma estratégia distribuída de reposit&oacute;rios. O primeiro reposit&oacute;rio público a receber as entregas fica no serviço GitHub, precisamente em [2].
+Parts of this project result from efforts of students and their
+teacher, on a Brazilian university named Est&aacute;cio.
 
-O IDE a implementar o arcabouço React Native usado neste projeto é público, e utiliza o serviço Expo Snack. Enquanto é considerado um prot&oacute;tipo de sala de aula, os c&oacute;digos-fontes podem ser encontrados em [1].
+In order to have a quick peek on it working, check [1]. That is where the classroom prototype is kept, a public web IDE implementing the React Native framework. It's known as the Expo Snack web IDE.
+
+Version control is done with Git, which enforces a distributed
+strategy for source code repositories. The first public repository to
+receive this project's commits is avaialable on the GitHub service,
+precisely on [2].
 
 <!--
 ----------------------------------------------------------------------

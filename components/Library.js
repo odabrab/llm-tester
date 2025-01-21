@@ -63,7 +63,9 @@
 ////////    (CO) FUNCTION(S)
 ////////      (CC) FUNCTION LIBRARY()
 ////////        (CC) FUNCTION FUNBOOCREATE()
+////////        (CC) FUNCTION FUNBOOCREATEFIREBASE()
 ////////        (CC) FUNCTION FUNBOOREAD()
+////////        (CC) FUNCTION FUNBOOREADFIREBASE()
 ////////        (CC) FUNCTION FUNBOOUPDATE()
 ////////        (CC) FUNCTION FUNBOOUPDATEFIREBASE()
 ////////        (CC) FUNCTION FUNBOODELETE()
@@ -218,8 +220,14 @@ async function Library(){
 //////////////////////////////////////////////////////////////////////
   function funBooCreate(inodeData, inodeName, varParBooInodeLocal, varParIntInodeType, varParStrPlatform){
 
-    varBooIsLocal  = varParBooInodeLocal;
-    varStrPlatform = varParStrPlatform;
+    //  Boolean variable varBooReturn is local, and it is
+    //  initialized with variable varBooGenericReturn's value,
+    //  which is global.
+    var varBooReturn = varBooGenericReturn;
+
+    varBooIsLocal    = varParBooInodeLocal;
+
+    varStrPlatform   = varParStrPlatform;
 
     switch(varStrPlatform){
 
@@ -286,8 +294,111 @@ async function Library(){
         }
     } // Structure switch()'s end.
 
-    return varBooGenericReturn;
+    return varBooReturn;
   } //  Function funBooCreate()'s end.
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+////////  (CC) FUNCTION FUNBOOCREATEFIREBASE()
+////////
+////////  Creates a local or remote archive, directory, file and/or
+////////  inode via Firebase.
+////////
+////////  PARAMETERS
+////////
+////////  @param {String} varParStrPlatform
+////////
+////////  @param inodeData
+////////
+////////  @param {Boolean} varParBooInodeLocal
+////////    variável booleana que determina se o inode é local.
+////////
+////////  @param inodeName
+////////
+////////  @param {Integer} varParIntInodeType
+////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+  function funBooCreateFirebase(inodeData, inodeName, varParBooInodeLocal, varParIntInodeType, varParStrPlatform){
+
+    //  Boolean variable varBooReturn is local, and it is
+    //  initialized with variable varBooGenericReturn's value,
+    //  which is global.
+    var varBooReturn = varBooGenericReturn;
+
+    varBooIsLocal    = varParBooInodeLocal;
+
+    varStrPlatform   = varParStrPlatform;
+
+    switch(varStrPlatform){
+
+      case "Android":
+
+        console.log(conStrProjectNameTag + " Sistema Operacional Android.");
+
+        if (varBooIsLocal){
+
+          console.log(conStrProjectNameTag + " Cria&ccedil;&atilde;o local.");
+        }
+
+        else{
+
+          console.log(conStrProjectNameTag + " Cria&ccedil;&atilde;o remota.");
+        }
+
+        break;
+
+      case "iOS":
+        console.log(conStrProjectNameTag + " Sistema Operacional iOS.");
+
+        if (varBooIsLocal){
+
+          console.log(conStrProjectNameTag + " Cria&ccedil;&atilde;o local.");
+        }
+
+        else{
+
+          console.log(conStrProjectNameTag + " Cria&ccedil;&atilde;o remota.");
+        }
+
+        break;
+
+      case "Web":
+        console.log(conStrProjectNameTag + " Web.");
+
+        if (varBooIsLocal){
+
+          console.log(conStrProjectNameTag + " Cria&ccedil;&atilde;o local.");
+
+          localStorage.setItem("oItem", "valorDoItem");
+        }
+
+        else{
+
+          console.log(conStrProjectNameTag + " Cria&ccedil;&atilde;o remota.");
+        }
+
+        break;
+      
+      default:
+
+        console.log(conStrProjectNameTag + " Plataforma desconhecida.");
+
+        if (varBooIsLocal){
+
+          console.log(conStrProjectNameTag + " Cria&ccedil;&atilde;o local.");
+        }
+
+        else{
+
+          console.log(conStrProjectNameTag + " Cria&ccedil;&atilde;o remota.");
+        }
+    } // Structure switch()'s end.
+
+    return varBooReturn;
+  } //  Function funBooCreateFirebase()'s end.
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -313,9 +424,15 @@ async function Library(){
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
   function funBooRead(inodeData, inodeName, varParBooInodeLocal, varParIntInodeType, varParStrPlatform){
-  
-    varBooIsLocal  = varParBooInodeLocal;
-    varStrPlatform = varParStrPlatform;
+
+    //  Boolean variable varBooReturn is local, and it is
+    //  initialized with variable varBooGenericReturn's value,
+    //  which is global.
+    var varBooReturn = varBooGenericReturn;
+
+    varBooIsLocal    = varParBooInodeLocal;
+
+    varStrPlatform   = varParStrPlatform;
 
     switch(varStrPlatform){
 
@@ -381,8 +498,109 @@ async function Library(){
         }
     } //  Structure switch()'s end.
 
-    return varBooGenericReturn;
+    return varBooReturn;
   } //  Function funBooRead()'s end.
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+////////  (CC) FUNCTION FUNBOOREADFIREBASE()
+////////
+////////  Reads a local or remote inode. If the file is remote, then
+////////  it behaves as a download.
+////////
+////////  PARÂMETROS
+////////
+////////  @param {String} varParStrPlatform
+////////
+////////  @param inodeData
+////////
+////////  @param {Boolean} booInodeLocal
+////////
+////////  @param inodeName
+////////
+////////  @param inodeType
+////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+  function funBooReadFirebase(inodeData, inodeName, varParBooInodeLocal, varParIntInodeType, varParStrPlatform){
+
+    //  Boolean variable varBooReturn is local, and it is
+    //  initialized with variable varBooGenericReturn's value,
+    //  which is global.
+    var varBooReturn = varBooGenericReturn;
+
+    varBooIsLocal    = varParBooInodeLocal;
+
+    varStrPlatform   = varParStrPlatform;
+
+    switch(varStrPlatform){
+
+      case "Android":
+
+        console.log(conStrProjectNameTag + " Sistema Operacional Android.");
+
+        if (varBooIsLocal){
+
+          console.log(conStrProjectNameTag + " Leitura local.");
+        }
+
+        else{
+
+          console.log(conStrProjectNameTag + " Leitura remota.");
+        }
+
+        break;
+
+      case "iOS":
+        console.log(conStrProjectNameTag + " Sistema Operacional iOS.");
+
+        if (varBooIsLocal){
+
+          console.log(conStrProjectNameTag + " Leitura local.");
+        }
+
+        else{
+
+          console.log(conStrProjectNameTag + " Leitura remota.");
+        }
+
+        break;
+
+      case "Web":
+        console.log(conStrProjectNameTag + " Web.");
+
+        if (varBooIsLocal){
+
+          console.log(conStrProjectNameTag + " Leitura local.");
+
+          localStorage.getItem("oItem");
+        }
+
+        else{
+
+          console.log(conStrProjectNameTag + " Leitura remota.");
+        }
+
+        break;
+      
+      default:
+        console.log(conStrProjectNameTag + " Plataforma desconhecida.");
+
+        if (varBooIsLocal){
+
+          console.log(conStrProjectNameTag + " Leitura local.");
+        }
+
+        else{
+
+          console.log(conStrProjectNameTag + " Leitura remota.");
+        }
+    } //  Structure switch()'s end.
+
+    return varBooReturn;
+  } //  Function funBooReadFirebase()'s end.
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -782,14 +1000,17 @@ async function Library(){
 ////////
 ////////  Firebase database.
 //////////////////////////////////////////////////////////////////////
-  const conDatabase             = firebase.database();
+  const conFirebaseDatabase     = firebase.database();
 
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) CONSTANT CONSTORAGE
 ////////
-////////  Firebase storage.
+////////  The conStorage constant holds a data structure referring to
+////////  a Firebase storage service, which is supposed to store user
+////////  account generated content, photos and videos, on Google
+////////  Cloud servers.
 //////////////////////////////////////////////////////////////////////
-  const conStorage              = firebase.storage();
+  const conFirebaseStorage      = firebase.storage();
 } //  Function Library()'s end.
 
 //////////////////////////////////////////////////////////////////////
