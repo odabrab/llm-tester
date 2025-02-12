@@ -69,6 +69,10 @@
 ////////        (CC) FUNCTION FUNBOOUPDATE()
 ////////        (CC) FUNCTION FUNBOOUPDATEFIREBASE()
 ////////        (CC) FUNCTION FUNBOODELETE()
+////////        (CC) FUNCTION FUNBOODELETEFIREBASE()
+////////        (CC) FUNCTION FUNBOODELETEEXPOLOCALLY()
+////////        (CC) FUNCTION FUNNUMSAVEEXPOLOCALLY()
+////////        (CC) FUNCTION FUNSTRREADEXPOLOCALLY()
 ////////        (CC) FUNCTION FUNSTRREADFILE()
 ////////        (CO) DECLARATION(S) AND INITIALIZATION(S)
 ////////          (CC) CONSTANT CONFIREBASECONFIG
@@ -141,8 +145,11 @@
 
 import * as DocumentPicker from 'expo-document-picker';
 
+//  SecureStore.
+import * as SecureStore from 'expo-secure-store';
+
 //  Firebase.
-import firebase from 'firebase';
+import { database, initializeApp, storage } from 'firebase';
 
 //  A biblioteca SafeAreaView é uma opção a View. Ambas estão em
 //  react-native.
@@ -157,19 +164,18 @@ import { Cache } from 'react-native-cache';
 //////////////////////////////////////////////////////////////////////
 ////////  (CO) FUNCTION(S)
 ////////
-////////  Funções de persistência oferecidas pela biblioteca
-////////  Library.js.
+////////  React Native and Expo offer a few options to store data both
+////////  locally and remotely.
 ////////
-////////  A linguagem de programação JavaScript oferece algumas
-////////  opções para se trabalhar com arquivos, ficheiros e
-////////  diretórios.
+////////  As for local storage, Expo offers the SecureStore library,
+////////  which supposedly enforces cryptography to store key-value
+////////  pairs on the device. Values should not exceed 2048 bytes.
 ////////
-////////  A classe Blob é apropriada para se trabalhar com arquivos
-////////  binários em contextos quaisquer desde que os referidos
-////////  binários não precisem ser editados.
+////////  Blob class is appropriated for dealing with binary files,
+////////  once those files do not need to be edited.
 ////////
-////////  A classe File é apropriada para se trabalhar com arquivos,
-////////  ficheiros e diretórios em páginas Web.
+////////  File class is appropriated for dealing with archives, files
+////////  and directories on Web servers.
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -302,8 +308,7 @@ async function Library(){
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) FUNCTION FUNBOOCREATEFIREBASE()
 ////////
-////////  Creates a local or remote archive, directory, file and/or
-////////  inode via Firebase.
+////////  Creates a remote entry on Firebase.
 ////////
 ////////  PARAMETERS
 ////////
@@ -506,8 +511,7 @@ async function Library(){
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) FUNCTION FUNBOOREADFIREBASE()
 ////////
-////////  Reads a local or remote inode. If the file is remote, then
-////////  it behaves as a download.
+////////  Reads a remote Firebase database.
 ////////
 ////////  PARÂMETROS
 ////////
@@ -607,8 +611,9 @@ async function Library(){
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) FUNCTION FUNBOOUPDATE()
 ////////
-////////  Atualiza um inode local ou remoto, e.g., escrever em um
-////////  ficheiro de texto local ou remoto.
+////////  Updates an archive, a directory and/or a file, locally
+////////  and/or remotely, e.g., writes something to a remote text
+////////  file.
 ////////
 ////////  Caso o inode de interesse esteja localizado remotamente, há
 ////////  algumas possibilidades de se realizar a atualização.
@@ -701,7 +706,7 @@ async function Library(){
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) FUNCTION FUNBOOUPDATEFIREBASE()
 ////////
-////////  Atualiza um banco de dados do serviço Firebase.
+////////  Updates a remote Firebase database service.
 ////////
 ////////  PARÂMETROS
 ////////
@@ -788,7 +793,8 @@ async function Library(){
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) FUNCTION FUNBOODELETE()
 ////////
-////////  Remove um inode local ou remoto.
+////////  Removes an archive, a directory and/or a file, locally
+////////  and/or remotely.
 ////////
 ////////  PARÂMETROS
 ////////
@@ -821,6 +827,159 @@ async function Library(){
 
     return varBooGenericReturn;
   } //  Function funBooDelete()'s end.
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+////////  (CC) FUNCTION FUNBOODELETEFIREBASE()
+////////
+////////  Removes a remote Firebase entry.
+////////
+////////  PARÂMETROS
+////////
+////////  @param {String} varParStrPlatform
+////////
+////////  @param inodeData
+////////
+////////  @param {Boolean} booInodeLocal
+////////
+////////  @param inodeName
+////////
+////////  @param inodeType
+////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+  function funBooDeleteFirebase(varParStrPlatform, inodeData, booInodeLocal, inodeName, inodeType){
+
+    varBooIsLocal = booInodeLocal;
+
+    if (varBooIsLocal){
+
+      console.log(conStrProjectNameTag + " Remo&ccedil;&atilde;o local.");
+    }
+
+    else{
+
+      console.log(conStrProjectNameTag + " Remo&ccedil;&atilde;o remota.");
+    }
+
+    return varBooGenericReturn;
+  } //  Function funBooDeleteFirebase()'s end.
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+////////  (CC) FUNCTION FUNBOODELETEEXPOLOCALLY()
+////////
+////////  Removes a local Expo SecureStore database entry.
+////////
+////////  PARÂMETROS
+////////
+////////  @param {String} varParStrPlatform
+////////
+////////  @param inodeData
+////////
+////////  @param {Boolean} booInodeLocal
+////////
+////////  @param inodeName
+////////
+////////  @param inodeType
+////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+  function funBooDeleteExpoLocally(varParStrPlatform, inodeData, booInodeLocal, inodeName, inodeType){
+
+    varBooIsLocal = booInodeLocal;
+
+    console.log(conStrProjectNameTag + " locally removed from Expo SecureStore.");
+
+    return varBooGenericReturn;
+  } //  Function funBooDeleteExpoLocally()'s end.
+
+/**
+ *********************************************************************
+ *********************************************************************
+ *********************************************************************
+ *******  (CC) FUNCTION FUNNUMSAVEEXPOLOCALLY()
+ *******
+ *******  Saves, i.e., creates or updates, a local entry on an Expo
+ *******  SecureStore database.
+ *******
+ *******  Parameters
+ *******
+ *******  @param {Number} varParNumKey
+ *******
+ *******  @param {String} varParStrValue
+ *******
+ *******  Return
+ *******  .
+ *******
+ *******  Usage example(s)
+ *******  .
+ *********************************************************************
+ *********************************************************************
+ *********************************************************************
+ */
+  async function funNumSaveExpoLocally(varParNumKey, varParStrValue){
+
+    var varNumKey    = varParNumKey;
+
+    var varStrValue  = varParStrValue;
+
+    await SecureStore.setItemAsync(varNumKey, varStrValue);
+
+    alert(conStrProjectNameTag + " Entry key " + varNumKey + " locally saved to Expo SecureStore database.");
+
+    console.log(conStrProjectNameTag + " Entry key " + varNumKey + " locally saved to Expo SecureStore database.");
+
+    return varNumKey;
+  } //  Function funNumSaveExpoLocally()'s end.
+
+/**
+ *********************************************************************
+ *********************************************************************
+ *********************************************************************
+ *******  (CC) FUNCTION FUNSTRREADEXPOLOCALLY()
+ *******
+ *******  Reads an entry from a local Expo SecureStore database.
+ *******
+ *******  Parameters
+ *******
+ *******  @param {Number} varParNumKey
+ *******
+ *******  Return
+ *******  It returns the entry value as a string.
+ *******
+ *******  Usage example(s)
+ *******  .
+ *********************************************************************
+ *********************************************************************
+ *********************************************************************
+ */
+  async function funStrReadExpoLocally(varParNumKey){
+
+    var varNumKey    = varParNumKey;
+
+    let varStrValue  = await SecureStore.getItemAsync(varNumKey);
+
+    if (varStrValue){
+
+      alert(conStrProjectNameTag + " Expo SecureStore database entry value is 🔐" + varStrValue + "🔐.");
+
+      console.log(conStrProjectNameTag + " Expo SecureStore database entry value is 🔐" + varStrValue + "🔐.");      
+    }
+
+    else{
+
+      alert(conStrProjectNameTag + " No value stored under Expo SecureStore database entry key " + varNumKey + ".");
+
+      console.log(conStrProjectNameTag + " No value stored under Expo SecureStore database entry key " + varNumKey + ".");      
+    }
+
+    return varStrValue;
+  } //  Function funStrReadExpoLocally()'s end.
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -992,7 +1151,7 @@ async function Library(){
 //////////////////////////////////////////////////////////////////////
   if(!firebase.apps.length){
 
-    firebase.initializeApp(firebaseConfig);
+    initializeApp(firebaseConfig);
   }
 
 //////////////////////////////////////////////////////////////////////
@@ -1000,7 +1159,7 @@ async function Library(){
 ////////
 ////////  Firebase database.
 //////////////////////////////////////////////////////////////////////
-  const conFirebaseDatabase     = firebase.database();
+  const conFirebaseDatabase     = database();
 
 //////////////////////////////////////////////////////////////////////
 ////////  (CC) CONSTANT CONSTORAGE
@@ -1010,7 +1169,7 @@ async function Library(){
 ////////  account generated content, photos and videos, on Google
 ////////  Cloud servers.
 //////////////////////////////////////////////////////////////////////
-  const conFirebaseStorage      = firebase.storage();
+  const conFirebaseStorage      = storage();
 } //  Function Library()'s end.
 
 //////////////////////////////////////////////////////////////////////

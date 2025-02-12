@@ -49,21 +49,17 @@ precisely on [2].
 -->
 ## SUM&Aacute;RIO
 
-**1) INTRODU&Ccedil;&Atilde;O**
+**1) INTRODUCTION**
 
-&nbsp;&nbsp;**1.1) A DISCIPLINA ARA0089**
+&nbsp;&nbsp;**1.1) PROTOTYPING AN LLM SERVICE TESTER**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**1.1.1) CODING DOJO**
+&nbsp;&nbsp;&nbsp;&nbsp;**1.1.1) REQUISITOS**
 
-&nbsp;&nbsp;**1.2) O PROT&Oacute;TIPO DE UM TESTADOR DE SERVIÇO LLM**
+&nbsp;&nbsp;&nbsp;&nbsp;**1.1.2) JAVASCRIPT**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**1.2.1) REQUISITOS**
+&nbsp;&nbsp;&nbsp;&nbsp;**1.1.3) REACT NATIVE**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**1.2.2) JAVASCRIPT**
-
-&nbsp;&nbsp;&nbsp;&nbsp;**1.2.3) REACT NATIVE**
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**1.2.3.1) DEPEND&Ecirc;NCIAS**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**1.1.3.1) DEPEND&Ecirc;NCIAS**
 
 **2) ESTRUTURA DO PROJETO LLM TESTER**
 
@@ -108,56 +104,36 @@ precisely on [2].
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
---------  INTRODU&ccedil;&Atilde;O
+--------  INTRODUCTION
 --------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 -->
-## 1) INTRODU&Ccedil;&Atilde;O
+## 1) INTRODUCTION
 
-Vislumbres do primeiro quarto do século XXI revelam claras tend&ecirc;ncias tecnol&oacute;gicas, e novas preocupações acompanham as referidas tend&ecirc;ncias. A versão do O LLM Tester aqui presente constitui uma prova de conceito (PoC) referente à capacidade de aplicaç&otilde;es para computadores m&oacute;veis e portáteis testarem serviços de inteligência artificial gerativa ou generativa, i.e., serviços LLM.
+A glimpse on the first quarter of the 21st century tech reveal some trends and concerns, e.g., artificial intelligence services and its consequences for mankind. The extent to which LLM services comply with laws has been the subject of debate in many jurisdictions around the globe. Following the referred concerns, the prototype herein approaches them by means of a distributed mobile application. These proof-of-concept routines are the result of a graduation discipline, namely ARA0089, taught at the Est&aacute;cio university in S&atildeo Paulo, Brasil.
 
-<!--
-----------------------------------------------------------------------
---------  A DISCIPLINA ARA0089
---------
-----------------------------------------------------------------------
--->
-### 1.1) A DISCIPLINA ARA0089
-
-A disciplina "ARA0089 Programa&ccedil;&atilde;o para dispositivos m&oacute;veis em Android" é ministrada em formato sala de aula invertida, conforme determina a sua ementa.
-
-As turmas da disciplina foram divididas em equipes de cinco alunos no máximo, lideranças foram definidas, e a partir de ent&atilde;o, as referidas equipes passaram a trabalhar no desenvolvimento de uma aplica&ccedil;&atilde;o que atendesse aos requisitos funcionais e n&atilde;o-funcionais m&iacute;nimos do enunciado.
-
-Uma vez que a ementa determina a utiliza&ccedil;&atilde;o do arcabou&ccedil;o React Native, a principal linguagem de programa&ccedil;&atilde;o utilizada é a JavaScript, juntamente à extens&atilde;o JavaScript Syntax eXtension (JSX), que agrega a sintaxe XML à referida linguagem de programa&ccedil;&atilde;o.
-
-#### 1.1.1) CODING DOJO
-
-O professor utiliza o laborat&oacute;rio para orientar as equipes, e para produzir intera&ccedil;ões entre elas. Assim, algumas aulas ocorrem como o chamado "coding dojo", um modelo de programa&ccedil;&atilde;o coletiva no qual o c&oacute;digo é projetado para que todos os presentes possam auxiliar em sua depura&ccedil;&atilde;o e/ou em seu aprimoramento.
-
-A engenharia de software do projeto lan&ccedil;a m&atilde;o do not&oacute;rio arcabou&ccedil;o Scrum, que por sua vez compõe o conjunto de sistemáticas chamado "desenvolvimento ágil de software".
-
-### 1.2) O PROT&Oacute;TIPO DE UM TESTADOR DE SERVIÇO LLM
+### 1.1) PROTOTYPING AN LLM SERVICE TESTER
 
 As turmas est&atilde;o a trabalhar em prot&oacute;tipos aplicações m&oacute;veis capazes de testar serviços LLM. Todas as aplicações s&atilde;o construídas com a linguagem de programaç&atilde;o JavaScript e o arcabouço React Native, o que permite disponibilizar as aplicações para Android e iOS.
 
 A presente seç&atilde;o trata das tecnologias e técnicas inicialmente selecionadas para a prototipagem.
 
-#### 1.2.1) REQUISITOS
+#### 1.1.1) REQUISITOS
 
 A presente seç&atilde;o mostra os requisitos da aplicaç&atilde;o.
 
-#### 1.2.2) JAVASCRIPT
+#### 1.1.2) JAVASCRIPT
 
-#### 1.2.3) REACT NATIVE
+#### 1.1.3) REACT NATIVE
 
 Arcabou&ccedil;o mantido pela organiza&ccedil;&atilde;o chamada Meta, que permite a cria&ccedil;&atilde;o de aplicativos para Android e iOS a partir de uma base única, escrita predominantemente em JavaScript e JSX.
 
 O projeto utiliza uma implementa&ccedil;&atilde;o do React Native chamada Snack.
 
-##### 1.2.3.1) DEPEND&Ecirc;NCIAS
+##### 1.1.3.1) DEPEND&Ecirc;NCIAS
 
 A presente se&ccedil;&atilde;o trata das dependências listadas pelo ficheiro package.json.
 
