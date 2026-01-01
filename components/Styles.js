@@ -178,9 +178,9 @@ export default StyleSheet.create({
     width:             "100%",
   },
 
-  logoEstacio: {
-    height:            64,
-    width:             64,
+  logoOrganization: {
+    height:            60,
+    width:             26,
   },
 
   paragraph: {

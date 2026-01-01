@@ -102,18 +102,18 @@ function InitialView({ navigation }) {
       <View style = {styles.containerRow}>
 
         <Image
-          source = {require("../assets/logotipo-Estacio-02.png")}
-          style  = {styles.logoEstacio}
+          source = {require("../assets/_bds_Labs.-transparent-low_resolution.png")}
+          style  = {styles.logoOrganization}
         />
 
         <Text style={styles.paragraph}>
-          Est&aacute;cio
+          _bds Labs.
         </Text>
 
       </View>
 
       <Text style={styles.paragraph}>
-        Prot&oacute;tipo: LLM Tester
+        [PoC] LLM Tester
       </Text>
 
       <View style = {styles.btnLLM}>
