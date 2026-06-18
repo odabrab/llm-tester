@@ -1,27 +1,30 @@
 <!--
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----  MARKDOWN FORMATTING README TEXT FILE
-----
-----  File name:     README.md.
-----  Author:        Marcio Barbado, Jr.
-----  Contact:       <marcio.barbado@bdslabs.com.br>.
-----  Place:         S&atilde;o Paulo, Brasil.
-----  Copyright (c): 2024, and 2025.
-----  License:       [LICENSE_NAME].
-----
-----  [LICENSE_SHORT_TEXT].
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --  MARKDOWN FORMATTING README TEXT FILE
+  --
+  --  File name:     README.md.
+  --  Author:        Marcio Barbado, Jr.
+  --  Contact:       <marcio.barbado@bdslabs.com.br>.
+  --  Place:         S&atilde;o Paulo, Brasil.
+  --  Copyright (c): 2024, 2025, and 2026.
+  --  License:       [LICENSE_NAME].
+  --
+  --  [LICENSE_SHORT_TEXT].
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
 -->
 
 <!--
+  --------------------------------------------------------------------
   --------------------------------------------------------------------
   --------------------------------------------------------------------
   --------------------------------------------------------------------
@@ -31,15 +34,20 @@
   --  In the structure represented below, (CC) denotes a comment and
   --  code block, and (CO) denotes a comment-only block.
   --
-  --  USAGE
+  --  FILE IDENTIFICATION: README
   --    ABSTRACT
-  --    INTRODUCTION
-  --    DEPENDENCY(IES)
-  --    INSTALLATION AND EXECUTION
-  --    DIRECTORY STRUCTURE
-  --    HISTORY AND RELEASE NOTES
-  --    CONTRIBUTION
-  --    REFERENCE(S)
+  --    TABLE OF CONTENTS
+  --      INTRODUCTION
+  --      USAGE
+  --      ARCHITECTURE OVERVIEW
+  --        DIRECTORIES AND FILES
+  --      DEPENDENCY(IES)
+  --      INSTALLATION AND EXECUTION
+  --      DIRECTORY STRUCTURE
+  --      HISTORY AND RELEASE NOTES
+  --      CONTRIBUTION
+  --      REFERENCE(S)
+  --------------------------------------------------------------------
   --------------------------------------------------------------------
   --------------------------------------------------------------------
   --------------------------------------------------------------------
@@ -50,44 +58,55 @@
   --------------------------------------------------------------------
   --------------------------------------------------------------------
   --------------------------------------------------------------------
-  --  USAGE
+  --------------------------------------------------------------------
+  --  FILE IDENTIFICATION: README
   --
   --  This is a readme file. Sometimes, its content may be turned into
   --  an appendix for a publication.
+  --
+  --  By the way, as of 2026, Snack still cannot deal with the <img>
+  --  tag below, when trying to render the visual version of this
+  --  readme file.
+  --------------------------------------------------------------------
   --------------------------------------------------------------------
   --------------------------------------------------------------------
   --------------------------------------------------------------------
 -->
-
-# README for the LLM Tester source code
-
-> A GenAI service testing mobile application based on React Native. 
-> <img src='./assets/_bds_Labs.-transparent-low_resolution.png' align='right'>
-
-Parts of this project result from efforts of students and their
-teacher, on a Brazilian university named Est&aacute;cio.
-
-In order to have a quick peek on it working, check [1]. That is where the classroom prototype is kept, a public web IDE implementing the React Native framework. It's known as the Expo Snack web IDE.
-
-Version control is done with Git, which enforces a distributed
-strategy for source code repositories. The first public repository to
-receive this project's commits is avaialable on the GitHub service,
-precisely on [2].
+# FILE IDENTIFICATION: README
 
 <!--
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
---------  SUM&Aacute;RIO
---------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --  ABSTRACT
+  --
+  --  .
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
 -->
-## SUM&Aacute;RIO
+> This is the readme file for the LLM Tester PoC source code, which is
+> a GenAI testing mobile application based on React Native. More
+> precisely, the LLM Tester PoC stands as a compliance framework
+> prototype intended to test LLM models against real world rulesets,
+> e.g., national legislations and/or corporate governance policies.
+> All you have to do is provide it with an LLM model and a ruleset.
+> Both the LLM model and the ruleset can be locally or remotely
+> available.
+> 
+> <img src='./assets/_bds_Labs.-transparent-low_resolution.png' align='right'>
+
+<!--
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --  TABLE OF CONTENTS
+  --
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+-->
+## TABLE OF CONTENTS
 
 **1) INTRODUCTION**
 
@@ -101,23 +120,9 @@ precisely on [2].
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**1.1.3.1) DEPEND&Ecirc;NCIAS**
 
-**2) ESTRUTURA DO PROJETO LLM TESTER**
+**2) USAGE**
 
-&nbsp;&nbsp;**2.1) O DIRET&Oacute;RIO /ASSETS/**
-
-&nbsp;&nbsp;**2.2) O DIRET&Oacute;RIO /COMPONENTS/**
-
-&nbsp;&nbsp;&nbsp;&nbsp;**2.2.1) O FICHEIRO /COMPONENTS/STYLES.JS**
-
-&nbsp;&nbsp;**2.3) O DIRET&Oacute;RIO /.PERSISTENCE/**
-
-&nbsp;&nbsp;&nbsp;&nbsp;**2.3.1) O FICHEIRO /.PERSISTENCE/LOG.CSV**
-
-&nbsp;&nbsp;**2.4) O FICHEIRO APP.JS**
-
-&nbsp;&nbsp;**2.5) O FICHEIRO PACKAGE.JSON**
-
-**3) ARQUITETURA**
+**3) ARCHITECTURE OVERVIEW**
 
 &nbsp;&nbsp;**3.1) PRINCIPAIS COMPONENTES**
 
@@ -127,6 +132,22 @@ precisely on [2].
 
 &nbsp;&nbsp;&nbsp;&nbsp;**3.2.2) REMOTAMENTE**
 
+&nbsp;&nbsp;**3.3) DIRECTORIES AND FILES**
+
+&nbsp;&nbsp;&nbsp;&nbsp;**3.3.1) O DIRET&Oacute;RIO /ASSETS/**
+
+&nbsp;&nbsp;&nbsp;&nbsp;**3.3.2) O DIRET&Oacute;RIO /COMPONENTS/**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**3.3.2.1) O FICHEIRO /COMPONENTS/STYLES.JS**
+
+&nbsp;&nbsp;&nbsp;&nbsp;**3.3.3) O DIRET&Oacute;RIO /.PERSISTENCE/**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**3.3.3.1) O FICHEIRO /.PERSISTENCE/LOG.CSV**
+
+&nbsp;&nbsp;&nbsp;&nbsp;**3.3.4) O FICHEIRO APP.JS**
+
+&nbsp;&nbsp;&nbsp;&nbsp;**3.3.5) O FICHEIRO PACKAGE.JSON**
+
 **4) LLM**
 
 &nbsp;&nbsp;**4.1) GEMINI**
@@ -135,25 +156,41 @@ precisely on [2].
 
 &nbsp;&nbsp;**4.3) LLAMA**
 
-**5) OBSERVA&Ccedil;&Otilde;ES**
+**5) HISTORY AND RELEASE NOTES**
 
 **REFER&Ecirc;NCIAS**
 
 <!--
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
---------  INTRODUCTION
---------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --  INTRODUCTION
+  --
+  --  .
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
 -->
 ## 1) INTRODUCTION
+Parts of this project result from efforts of students and their
+teacher on a Brazilian university named Est&aacute;cio.
 
-A glimpse on the first quarter of the 21st century tech reveal some trends and concerns, e.g., artificial intelligence services and its consequences for mankind. The extent to which LLM services comply with laws has been the subject of debate in many jurisdictions around the globe. Following the referred concerns, the prototype herein approaches them by means of a distributed mobile application. These proof-of-concept routines are the result of a graduation discipline, namely ARA0089, taught at the Est&aacute;cio university in S&atildeo Paulo, Brasil.
+In order to have a quick peek on it working, check [1]. That is where
+the classroom prototype is kept, a public web IDE implementing the
+React Native framework. It's known as the Expo Snack web IDE.
+
+Version control is done with Git, which enforces a distributed
+strategy for source code repositories. The first public repository to
+receive this project's commits is avaialable on the GitHub service,
+precisely on [2].
+
+A glimpse on the first quarter of the 21st century tech reveal some
+trends and concerns, e.g., artificial intelligence services and its
+consequences for mankind. The extent to which LLM services comply with
+laws has been the subject of debate in many jurisdictions around the
+globe. Following the referred concerns, the prototype herein
+approaches them by means of a distributed mobile application. These
+proof-of-concept routines are the result of a graduation discipline,
+namely ARA0089, taught at the Est&aacute;cio university in
+S&atildeo Paulo, Brasil.
 
 ### 1.1) PROTOTYPING AN LLM SERVICE TESTER
 
@@ -184,7 +221,11 @@ A presente se&ccedil;&atilde;o trata das dependências listadas pelo ficheiro pa
 #### XML
 
 #### SCRUM
-
+<!--
+  --  By the way, as of 2026, Snack still cannot deal with the <img>
+  --  tag below, when trying to render the visual version of this
+  --  readme file.
+  -->
 ### A INTERFACE SNACK
 
 Utiliza-se o IDE Expo Snack para prototipagem. Ele permite que o resultado do c&oacute;digo seja automaticamente mostrado no painel à direita, que funciona como se fosse a tela de um dispositivo m&oacute;vel. É possível emular equipamentos com Android e com iOS. Caso seja desejável visualizar telas em smartphones reais e/ou outros dispositivos, utiliza-se o c&oacute;digo QR.
@@ -202,59 +243,24 @@ Caso você já tenha um editor de texto ou IDE de sua preferência, fa&ccedil;a 
 Adicionalmente, o Expo oferece um [f&oacute;rum](https://forums.expo.dev/c/expo-dev-tools/61) para dúvidas gerais e específicas. 
 
 <!--
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
---------  ESTRUTURA DO PROJETO LLM TESTER
---------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --  USAGE
+  --
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
 -->
-## 2) ESTRUTURA DO PROJETO LLM TESTER
-
-Diret&oacute;rios e ficheiros com c&oacute;digos-fontes. O ficheiro principal é o App.js. Caso o projeto esteja no Snack, o ficheiro package.json possui particular import&acirc;ncia.
-
-### 2.1) O DIRET&Oacute;RIO /ASSETS/
-
-Abriga conteúdo visual e audiovisual.
-
-### 2.2) O DIRET&Oacute;RIO /COMPONENTS/
-
-Abriga os ficheiros locais de biblioteca, chamados de componentes.
-
-### 2.2.1) O FICHEIRO /COMPONENTS/STYLES.JS
-
-Os estilos ficam concentrados no ficheiro /components/Styles.js.
-
-### 2.3) O DIRET&Oacute;RIO /.PERSISTENCE/
-
-Abriga dados, e.g., etc.
-
-### 2.3.1) O FICHEIRO /.PERSISTENCE/LOG.CSV
-
-Persiste registros.
-
-### 2.4) O FICHEIRO APP.JS
-
-### 2.5) O FICHEIRO PACKAGE.JSON
-Ficheiro de fundamental importância no IDE Snack. Realiza o gerenciamento de bibliotecas e suas versões.
+## 2) USAGE
 
 <!--
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
---------  ARQUITETURA
---------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
+  ------  ARCHITECTURE OVERVIEW
+  ------
+  --------------------------------------------------------------------
+  --------------------------------------------------------------------
 -->
-## 3) ARQUITETURA
+## 3) ARCHITECTURE OVERVIEW
 
 ### 3.1) PRINCIPAIS COMPONENTES
 
@@ -263,20 +269,52 @@ O prot&oacute;tipo para o arcabouço React Native se encontra adaptado às restr
 A biblioteca react-native-fs figura como uma op&ccedil;&atilde;o para a cria&ccedil;&atilde;o de ficheiros, entretanto se mostrou problemática no IDE Snack.
 
 ### 3.2) CACHING E PERSIST&Ecirc;NCIA
-
 Dados da aplica&ccedil;&atilde;o s&atilde;o salvos localmente e remotamente. Eles s&atilde;o organizados em três tipos de tabelas: um tipo para tabelas de contas, um tipo para tabelas de consultas, e um tipo para tabelas de registros ou *logs*.
 
 Tabelas de registros ou *logs* servem para auxíliar a pr&oacute;pria atividade do desenvolvimento da aplica&ccedil;&atilde;o.
 
 #### 3.2.1) LOCALMENTE
-
 O armazenamento local de dados depende da plataforma.
 
 Caso a plataforma seja Android ou iOS, o armazenamento local pode utilizar os componentes AsyncStorage e Cache, que amenizam problemas do usuário nas situa&ccedil;ões em que as consultas a bancos de dados remotos forem imposs&iacute;veis. Isso significa que o Cache melhora a experiência do usuário. O referido componente copia para o sistema operacional local alguns dados que normalmente exigiriam consultas a servi&ccedil;os remotos.
 
 #### 3.2.2) REMOTAMENTE
-
 Dada a urgência de uso, a implementa&ccedil;&atilde;o padr&atilde;o pode provisoriamente utilizar planilhas _online_ como bancos de dados. Os estudantes entretanto têm demonstrado alguma preferência pelo serviço Firebase [6].
+
+<!--
+  --------------------------------------------------------------------
+  --  DIRECTORIES AND FILES
+  --
+----------------------------------------------------------------------
+-->
+### 3.3) DIRECTORIES AND FILES
+
+Diret&oacute;rios e ficheiros com c&oacute;digos-fontes. O ficheiro principal é o App.js. Caso o projeto esteja no Snack, o ficheiro package.json possui particular import&acirc;ncia.
+
+#### 3.3.1) O DIRET&Oacute;RIO /ASSETS/
+
+Abriga conteúdo visual e audiovisual.
+
+#### 3.3.2) O DIRET&Oacute;RIO /COMPONENTS/
+
+Abriga os ficheiros locais de biblioteca, chamados de componentes.
+
+##### 3.3.2.1) O FICHEIRO /COMPONENTS/STYLES.JS
+
+Os estilos ficam concentrados no ficheiro /components/Styles.js.
+
+#### 3.3.3) O DIRET&Oacute;RIO /.PERSISTENCE/
+
+Abriga dados, e.g., etc.
+
+##### 3.3.3.1) O FICHEIRO /.PERSISTENCE/LOG.CSV
+
+Persiste registros.
+
+#### 3.3.4) O FICHEIRO APP.JS
+
+#### 3.3.5) O FICHEIRO PACKAGE.JSON
+Ficheiro de fundamental importância no IDE Snack. Realiza o gerenciamento de bibliotecas e suas versões.
 
 <!--
 ----------------------------------------------------------------------
@@ -305,16 +343,20 @@ Uma vez autenticada a conta Google, deve-se verificar [3] e [4]. Cotas de utiliz
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
---------  OBSERVA&Ccedil;&Otilde;ES
+--------  ADDITIONAL REMARKS
 --------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 -->
-## 5) OBSERVA&Ccedil;&Otilde;ES
+## 5) HISTORY AND RELEASE NOTES
+This chapter shelters additional remarks about the code's history and
+release notes.
 
-Quanto à viabilidade da utiliza&ccedil;&atilde;o de planilhas _online_ como bancos de dados para situa&ccedil;ões urgentes.
+By the time of the project's earlier scratches, we have tested how
+practical online spreadsheets could be if we used them as databases on
+urgent situations.
 
 <!--
 ----------------------------------------------------------------------

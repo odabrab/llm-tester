@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "llm-tester-poc",
+    "slug": "snack-e312d03d-42cf-4641-b7c4-dd4c629ff149",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "A compliance framework prototype to test LLM models against rulesets, e.g., national legislations and/or corporate governance policies. "
+  }
+}

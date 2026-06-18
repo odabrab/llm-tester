@@ -1,16 +1,51 @@
 ######################################################################
-########	.gitignore
-########
-########	In order to store the ignored files list outside of
-########	the Git tree, one should use the ".git/info/exclude"
-########	file.
+####  GITIGNORE
+####
+####  Learn more on
+####  <https://docs.github.com/en/get-started/
+####   getting-started-with-git/ignoring-files>.
 ######################################################################
 
-#  Local GUI file(s).
-*.directory
+#  Dependencies.
+node_modules/
 
-/2024-10-20-Google-client_secret.apps.googleusercontent.com.json
+#  Expo.
+.expo/
+dist/
+web-build/
+eas.json
+expo-env.d.ts
 
-/app.json
+#  Google.
+*.googleusercontent.com.json
 
-/eas.json
+#  Native.
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# generated native folders
+/ios
+/android
